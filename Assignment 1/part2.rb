@@ -20,8 +20,8 @@ def rps_game_winner(game)
   
   return [player1.name, player1.move] if player1.move == player2.move
   
-  loser = RPS_MOVES.select{|winner, loser| (winner == player1.move and loser == player2.move) or (winner == player2.move and loser == player1.move)}[0]
-  player1.move == loser[1] ? [player2.name, player2.move] : [player1.name, player1.move]
+  loser = RPS_MOVES.select{|winner, loser| (winner == player1.move and loser == player2.move) or (winner == player2.move and loser == player1.move)}.values[0]
+  player1.move == loser ? [player2.name, player2.move] : [player1.name, player1.move]
 end
 
 def rps_tournament_winner(tournament)
