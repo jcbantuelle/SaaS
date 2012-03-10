@@ -13,13 +13,9 @@ class Numeric
 end
 
 class String
-  def method_missing(method_name)
-    if method_name == :palindrome?
-      stripped_phrase = self.downcase.gsub(/[^a-z]/, '')
-      stripped_phrase == stripped_phrase.reverse
-    else
-      super
-    end
+  def palindrome?
+    stripped_phrase = self.downcase.gsub(/[^a-z]/, '')
+    stripped_phrase == stripped_phrase.reverse
   end
 end
 
